@@ -14,7 +14,14 @@
 
 	<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
 	<script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+
   </head>
+
+  
+  <label for="name">Name (4 to 8 characters):</label>
+
+<input type="text" id="name" name="name" required
+       minlength="4" maxlength="8" size="10">
 
   <body>
 
@@ -29,8 +36,7 @@
 			var user = await Moralis.Web3.authenticate();
 			if(user){
 				console.log(user);
-				user.set("nickname","VITALIK");
-				user.set("fav_color","blue");
+				user.set("username",name);
 				user.save();
 			}
 		}
